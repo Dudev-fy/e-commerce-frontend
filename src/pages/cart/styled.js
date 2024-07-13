@@ -1,5 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
+import { breakpoints } from '../../config/breakpoints';
+
 export const OrderDiv = styled.div`
   display: flex;
   background-color: white;
@@ -40,6 +42,20 @@ export const Main = styled.main`
   margin: 15px auto;
   padding: 10px;
 
+  @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+    height: 100%;
+    width: 100%;
+    padding: 0px 10px;
+    margin: 0;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    height: 100%;
+    width: 100%;
+    padding: 0px 10px;
+    margin: 0;
+  }
+
   p {
     font-size: 18px;
   }
@@ -57,12 +73,37 @@ export const ProductDiv = styled.div`
   display: flex;
   flex-direction: row;
   height: 35vh;
+
+  @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
 `;
 
 export const ProductDesc = styled.div`
   padding: 20px;
   width: 50%;
-  background-color: white;
+
+  @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const ProductImage = styled.div`
@@ -70,6 +111,14 @@ export const ProductImage = styled.div`
   background-color: white;
   padding: 10px;
   margin-left: 10px;
+
+  @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+    width: 70%;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 70%;
+  }
 
   img {
     width: 80%;
@@ -97,7 +146,6 @@ export const BorderTop = styled.div`
 `;
 
 export const BorderBottom = styled.div`
-  background-color: red;
   width: 97%;
   border-bottom: 1px solid black;
 `;
@@ -108,6 +156,21 @@ export const TotalValueDiv = styled.div`
   justify-content: space-between;
   width: 100%;
   margin-top: 10px;
+
+  @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+    h2 {
+      font-size: 18px;
+      margin-top: 7px;
+    }
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    h2 {
+      font-size: 18px;
+      margin-top: 7px;
+    }
+  }
+
   button {
     margin-left: 25px;
     border: none;
@@ -117,6 +180,18 @@ export const TotalValueDiv = styled.div`
     width: 20%;
     height: 30px;
     font-size: 15px;
+
+    @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+      width: 30%;
+      height: 35px;
+      margin-left: 5px;
+    }
+
+    @media (max-width: ${breakpoints.mobile}) {
+      width: 30%;
+      height: 35px;
+      margin-left: 5px;
+    }
   }
 
   button:hover {
@@ -127,6 +202,16 @@ export const TotalValueDiv = styled.div`
 export const DetailsDiv = styled.div`
   display: flex;
   flex-direction: row;
+
+  @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+    width: 100%;
+    justify-content: center;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 100%;
+    justify-content: center;
+  }
 
   i {
     background-color: black;
@@ -147,6 +232,14 @@ export const QuantityDiv = styled.span`
   border: 2px solid black;
   padding: 7px;
   margin-top: 20px;
+
+  @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+    width: 30%;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 30%;
+  }
 
   :nth-child(1) {
     align-self: center;
@@ -174,6 +267,14 @@ export const ExcludeInput = styled.input`
   align-self: center;
   width: 12%;
   border: none;
+
+  @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+    height: 30px;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    height: 30px;
+  }
 
   &:hover {
     color: rebeccapurple;

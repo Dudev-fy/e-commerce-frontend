@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { breakpoints } from '../../config/breakpoints';
+
 export const Main = styled.main`
   display: flex;
   flex-direction: column;
@@ -12,6 +14,18 @@ export const Main = styled.main`
   margin-top: 20px;
   border-radius: 20px;
   padding: 20px;
+
+  @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+    width: 80%;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 80%;
+  }
+
+  @media (min-width: ${breakpoints.tablet}) and (max-width: ${breakpoints.desktop}) {
+    width: 70%;
+  }
 
   button {
     height: 35px;
@@ -27,6 +41,14 @@ export const Main = styled.main`
 
     &:hover {
       background-color: blue;
+    }
+
+    @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+      width: 45%;
+    }
+
+    @media (max-width: ${breakpoints.mobile}) {
+      width: 45%;
     }
   }
 
@@ -57,6 +79,14 @@ export const Form = styled.form`
 
     &:hover {
       background-color: darkorange;
+    }
+
+    @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+      width: 60%;
+    }
+
+    @media (max-width: ${breakpoints.mobile}) {
+      width: 60%;
     }
   }
 

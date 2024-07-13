@@ -48,7 +48,7 @@ export default function Register() {
       setLastNameError(false);
     }
 
-    if (cpf.length < 3 || cpf.length > 255) {
+    if (cpf.length !== 11) {
       setCpfError(true);
       isError = true;
     } else {

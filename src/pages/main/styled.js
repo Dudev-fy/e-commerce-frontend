@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakpoints } from '../../config/breakpoints';
 
 export const H1 = styled.h1`
   display: flex;
@@ -33,6 +34,18 @@ export const MainDiv = styled.div`
       background-color: darkorange;
     }
   }
+
+  @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media (min-width: ${breakpoints.tablet}) and (max-width: ${breakpoints.desktop}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 export const ProductDiv = styled.div``;
@@ -64,6 +77,14 @@ export const SubDiv = styled.div`
   }
   :nth-child(3) {
     color: green;
+  }
+
+  @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+    height: 30vh;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    height: 30vh;
   }
 `;
 

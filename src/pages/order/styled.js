@@ -1,5 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
+import { breakpoints } from '../../config/breakpoints';
+
 export const Main = styled.main`
   display: flex;
   flex-direction: column;
@@ -8,6 +10,16 @@ export const Main = styled.main`
   width: 75%;
   margin: 15px auto;
   padding: 10px;
+
+  @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+    width: 100%;
+    margin: 0;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 100%;
+    margin: 0;
+  }
 
   p {
     font-size: 18px;

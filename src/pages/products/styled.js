@@ -1,12 +1,29 @@
 import styled, { keyframes } from 'styled-components';
 
+import { breakpoints } from '../../config/breakpoints';
+
 export const MainDiv = styled.main`
   display: flex;
   justify-content: center;
   margin: 25px;
-  height: 60vh;
+  height: 100vh;
+  height: 100%;
   background-color: white;
   padding: 10px;
+
+  @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 20px 10px;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 20px 10px;
+  }
 `;
 
 export const MiniImages = styled.div`
@@ -15,15 +32,36 @@ export const MiniImages = styled.div`
   width: 8%;
   align-items: center;
 
+  @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+    flex-direction: row;
+    width: 30%;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    flex-direction: row;
+    width: 30%;
+  }
+
   :nth-child(1) {
     margin-top: 0;
   }
+
   img {
     width: 60%;
     height: 100px;
     border: 2px solid black;
     margin-top: 5px;
     border-radius: 10px;
+
+    @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+      width: 70%;
+      margin: 0px 5px;
+    }
+
+    @media (max-width: ${breakpoints.mobile}) {
+      width: 70%;
+      margin: 0px 5px;
+    }
   }
 
   img:hover {
@@ -33,27 +71,21 @@ export const MiniImages = styled.div`
 
 export const ImageDiv = styled.div`
   width: 35%;
+  margin: 0 auto;
+
+  @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+    margin: 15px auto;
+    width: 80%;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    margin: 15px auto;
+    width: 80%;
+  }
 
   img {
     width: 100%;
     height: 100%;
-  }
-
-  button {
-    position: absolute;
-    top: 42%;
-    background: rgba(0, 0, 0, 0.3);
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-  }
-
-  :nth-child(1) {
-    left: 25px;
-  }
-
-  :nth-child(3) {
-    right: 25px;
   }
 `;
 
@@ -61,6 +93,15 @@ export const DescDiv = styled.div`
   background-color: white;
   width: 40%;
   padding: 20px;
+
+  @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+    width: 100%;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 100%;
+  }
+
   :nth-child(1) {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
       'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -75,6 +116,19 @@ export const PriceDiv = styled.div`
   border: 2px solid #0f1111;
   width: 25%;
   padding: 20px;
+
+  @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+    width: 100%;
+    height: 100%;
+    height: 35vh;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 100%;
+    height: 100%;
+    height: 35vh;
+  }
+
   :nth-child(1) {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
       'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -99,6 +153,14 @@ export const PriceDiv = styled.div`
       border-right-width: 0;
       background-color: gainsboro;
       box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+
+      @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+        height: 5vh;
+      }
+
+      @media (max-width: ${breakpoints.mobile}) {
+        height: 5vh;
+      }
     }
 
     :nth-child(1):disabled {
@@ -111,6 +173,16 @@ export const PriceDiv = styled.div`
       border: 1px solid #888c8c;
       background-color: gainsboro;
       box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+
+      @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+        width: 100%;
+        height: 5vh;
+      }
+
+      @media (max-width: ${breakpoints.mobile}) {
+        width: 100%;
+        height: 5vh;
+      }
     }
 
     :nth-child(3) {
@@ -126,6 +198,14 @@ export const PriceDiv = styled.div`
       background-color: gainsboro;
       height: 100%;
       box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+
+      @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+        height: 5vh;
+      }
+
+      @media (max-width: ${breakpoints.mobile}) {
+        height: 5vh;
+      }
     }
   }
 
@@ -136,6 +216,16 @@ export const PriceDiv = styled.div`
     border: none;
     border-radius: 10px;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+
+    @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+      height: 5vh;
+      margin-top: 30px;
+    }
+
+    @media (max-width: ${breakpoints.mobile}) {
+      height: 5vh;
+      margin-top: 30px;
+    }
   }
 
   :nth-child(4):hover {

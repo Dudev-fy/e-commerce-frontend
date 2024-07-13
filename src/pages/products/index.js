@@ -59,7 +59,7 @@ export default function Products() {
       }
     } catch {
       dispatch(actions.loginFailure());
-      history.go(0);
+      history.push(0);
     }
   }
 

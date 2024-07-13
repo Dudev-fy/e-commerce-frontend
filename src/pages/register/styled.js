@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { breakpoints } from '../../config/breakpoints';
+
 export const Main = styled.main`
   display: flex;
   flex-direction: column;
@@ -12,6 +14,18 @@ export const Main = styled.main`
   margin-top: 20px;
   border-radius: 20px;
   padding: 20px;
+
+  @media (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.tablet}) {
+    width: 70%;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 70%;
+  }
+
+  @media (min-width: ${breakpoints.tablet}) and (max-width: ${breakpoints.desktop}) {
+    width: 60%;
+  }
 
   button {
     height: 35px;
